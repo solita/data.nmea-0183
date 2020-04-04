@@ -63,7 +63,8 @@
     "5" :frtk
     "6" :estimated
     "7" :manual
-    "8" :simulated))
+    "8" :simulated
+    :unknown))
 
 (defmethod from-ascii ::utc-time [_ value]
   {::hours (Integer/parseInt (subs value 0 2))
