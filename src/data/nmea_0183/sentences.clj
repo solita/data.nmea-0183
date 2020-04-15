@@ -82,7 +82,7 @@
   ::f/faa-mode)
 
 (define-sentence "GGA" ::gga
-  ::f/time
+  ::f/time ;; <- UTC of position fix
   ::f/latitude ::f/lat-hemisphere ::f/longitude ::f/lon-hemisphere
   ::f/fix-quality
   ::f/satellites-in-use
@@ -118,7 +118,10 @@
   ::f/variation-hemisphere)
 
 (define-sentence "GRS" ::grs
-  ::f/time
+  ::f/time ;; <-- UTC of GGA position fix
+  ;; 	Residuals recomputed
+  ;;   0: Residuals used to calculate position given in the matching GGA line
+  ;;   1: Residuals recomputed after the GGA position was computed
   ::f/residuals-recomputed
   [12 ::f/grs-range-residuals some?])
 
