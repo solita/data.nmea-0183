@@ -108,7 +108,8 @@
   ::f/local-zone-hours ::f/local-zone-minutes)
 
 (define-sentence "RMC" ::rmc
-  ::f/time ::f/data-status
+  ::f/time ;; <-- UTC of position fix
+  ::f/data-status ;; <-- Status A=active or V=void
   ::f/latitude ::f/lat-hemisphere
   ::f/longitude ::f/lon-hemisphere
   ::f/speed-knots
